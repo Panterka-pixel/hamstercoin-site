@@ -1,0 +1,635 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>RollerCoin — Игра, где майнит даже ХОМЯК</title>
+  <style>
+  .world-testimonials {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(0,0,0,0.6);
+    border-radius: 10px;
+    color: #ffd700;
+    font-size: 16px;
+  }
+  .world-testimonials h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 1px 1px 3px #000;
+  }
+  .testimonial {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-left: 4px solid #ffd700;
+    background: rgba(0,0,0,0.4);
+    border-radius: 6px;
+  }
+  .testimonial span {
+    font-size: 18px;
+    margin-right: 6px;
+  }
+</style>
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('77848.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      font-family: Arial, sans-serif;
+      color: #ffd700;
+      text-shadow: 1px 1px 2px #000;
+    }
+    .language-switch {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      z-index: 999;
+    }
+    .language-select {
+      padding: 6px;
+      border-radius: 4px;
+      font-weight: bold;
+      background-color: #ffd700;
+      border: none;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .header-image {
+      text-align: center;
+      margin: 20px auto 10px;
+    }
+    .header-image img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      filter: drop-shadow(0 0 15px #ffaa00);
+      animation: glowImage 3s infinite alternate;
+    }
+    @keyframes glowImage {
+      0%   { filter: drop-shadow(0 0 10px #ffaa00); }
+      50%  { filter: drop-shadow(0 0 30px #ff6600); }
+      100% { filter: drop-shadow(0 0 10px #ffaa00); }
+    }
+    .content {
+      background-color: rgba(0, 0, 0, 0.65);
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px auto;
+      max-width: 1000px;
+    }
+    .lang { display: none; }
+    .active-lang { display: block; }
+    .glow-text {
+      font-size: 18px;
+      line-height: 1.6;
+      text-align: center;
+      animation: glowText 2.5s infinite;
+    }
+    @keyframes glowText {
+      0%   { text-shadow: 0 0 5px #ffeb3b; color: #fff; }
+      50%  { text-shadow: 0 0 20px #ffd700, 0 0 30px #ffcc00; color: #ffffaa; }
+      100% { text-shadow: 0 0 5px #ffeb3b; color: #fff; }
+    }
+    .fire-emoji {
+      display: inline-block;
+      color: #ff0000;
+      animation: pulseFire 1.2s infinite;
+      margin-right: 8px;
+    }
+    @keyframes pulseFire {
+      0% { transform: scale(1); text-shadow: 0 0 5px #ff0000; }
+      50% { transform: scale(1.15); text-shadow: 0 0 15px #ff0000; }
+      100% { transform: scale(1); text-shadow: 0 0 5px #ff0000; }
+    }
+    .cta-button {
+      display: inline-block;
+      padding: 14px 28px;
+      background-color: #f1c40f;
+      color: #000000;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+    }
+    .cta-button:hover {
+      background-color: #ffd700;
+      cursor: pointer;
+    }
+    .video {
+      text-align: center;
+      margin: 40px 0;
+    }
+    .side-banner {
+      position: fixed;
+      left: 0;
+      top: 120px;
+      z-index: 10;
+    }
+    .bottom-banner {
+      text-align: center;
+      margin: 40px 0;
+    }
+  </style>
+  <script>
+    function switchLanguage(lang) {
+      document.querySelectorAll('.lang').forEach(el => el.classList.remove('active-lang'));
+      document.querySelector('.lang.' + lang).classList.add('active-lang');
+    }
+    window.onload = () => switchLanguage('ru');
+  </script>
+</head>
+<body>
+
+  <!-- Переключатель языков -->
+  <div class="language-switch">
+    <select class="language-select" onchange="switchLanguage(this.value)">
+      <option value="ru">🌐 Русский</option>
+      <option value="en">🇬🇧 English</option>
+      <option value="fr">🇫🇷 Français</option>
+      <option value="es">🇪🇸 Español</option>
+    </select>
+  </div>
+
+  <!-- Левый вертикальный баннер -->
+  <div class="side-banner">
+    <a href="https://rollercoin.com/?r=m6icrrst" target="_blank">
+      <img src="https://static.rollercoin.com/static/img/ref/gen2/w120h600.gif" alt="RollerCoin Left Banner" />
+    </a>
+  </div>
+
+  <!-- Шапка с хомяком -->
+  <div class="header-image">
+    <img src="Для сайта шапка.png" alt="RollerCoin Header">
+  </div>
+  <!-- 🇷🇺 RUSSIAN -->
+  <div class="content lang ru active-lang">
+
+    <p>🐹💰 Добро пожаловать в мир, где майнит даже ХОМЯК</p>
+    <p>Ты в интернете. И ищешь заработок? А вокруг тебя одни разводы, серые схемы и реклама чудо-заработков.</p>
+    <p>Но вот тебе вопрос: хочешь поиграть 5 минут в аркаду… и через пару дней увидеть, как у тебя копится настоящая крипта?</p>
+
+    <h3>🎮 Не "игра с выводом". Это — ИГРА с большой буквы</h3>
+    <ul>
+      <li>👉 Без дебильных донатов</li>
+      <li>👉 Без “введи кошелёк и жди чудо”</li>
+      <li>👉 Без пушистых обещаний что ты завтра будешь миллионером</li>
+    </ul>
+
+    <p>Ты просто играешь в прикольные мини-игры.<br/>
+    Побеждаешь — получаешь "мощность", как будто собрал свою реальную майнинг-ферму.<br/>
+    И эта ферма начинает реально майнить тебе крипту. 💸</p>
+
+    <h3>🚀 А что ты получаешь?</h3>
+    <ul>
+      <li>🧱 Строишь свою цифровую майнинг-комнату</li>
+      <li>🤖 Соревнуешься с другими игроками</li>
+      <li>⚙️ Апгрейдишь оборудование</li>
+      <li>🏆 Ловишь ивенты, бонусы,  и зарабатываешь НАСТОЯЩУЮ КРИПТОВАЛЮТУ</li>
+      <li>🎯 Всё это — в браузере, даже с телефона</li>
+    </ul>
+
+    <h3>📌 А теперь реальность:</h3>
+    <p>Ты не станешь миллионером за неделю.<br/>
+    Но ты точно ЗАИНТЕРЕСУЕШЬСЯ процессом игры!<br/>
+    И к концу месяца увидишь крипту на балансе, просто потому что… ИГРАЛ</p>
+
+    <h3>🎯 Как начать?</h3>
+    <ol>
+      <li>Жмёшь кнопку ниже</li>
+      <li>Создаёшь акк — 15 секунд (смотри видео о регистрации)</li>
+      <li>Проходишь мини-игры</li>
+      <li>Участвуешь в ивентах</li>
+      <li>Смотришь, как капает криптовалюта. Каждый день.</li>
+      <li>Но помни! За просто так никто ничего не подарит — тебе придётся приложить немного усилий.</li>
+      <li>Какие усилия? Просто ИГРАТЬ — и всё получится!</li>
+    </ol>
+         <!-- Голубая кнопка перед видео -->
+    <div style="text-align: center; margin: 30px 0;">
+      <a href="https://rollercoin.com/?r=m6icrrst" class="cta-button" style="background-color: #00c3ff; color: #ffffff;">
+        ✅ Зарегистрироваться в игре
+      </a>
+    </div>
+
+    <!-- Видео -->
+    <div class="video">
+      <iframe width="100%" height="315"
+        src="https://www.youtube.com/embed/-U2iaIGAveo"
+        title="Как зарегистрироваться в RollerCoin"
+        frameborder="0"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <!-- Светящийся блок -->
+    <p class="glow-text">
+      Ты уже потратил 5 минут на это видео.<br>
+      Потрать ещё 10 — и пойми, как здесь можно зарабатывать.<br><br>
+      Ты всё ещё сомневаешься?<br>
+      Просто попробуй. Без вложений, без риска.<br>
+      Только ты и шанс.
+    </p>
+
+    <!-- Кнопка -->
+    <div style="text-align: center; margin-top: 20px;">
+      <a href="https://rollercoin.com/?r=m6icrrst" class="cta-button">
+        <span class="fire-emoji">🔥</span>НАЧАТЬ СЕЙЧАС
+      </a>
+    </div>
+    <style>
+  .faq-block {
+    margin-top: 40px;
+    border-top: 2px solid #ffd700;
+    padding-top: 20px;
+  }
+  .faq-block h3 {
+    text-align: center;
+    color: #ffd700;
+    text-shadow: 1px 1px 3px #000;
+  }
+  .faq-question {
+    background-color: #222;
+    color: #ffd700;
+    border: none;
+    padding: 12px 20px;
+    margin: 10px 0;
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  .faq-answer {
+    display: none;
+    padding: 10px 20px;
+    background-color: rgba(0,0,0,0.7);
+    color: #fff;
+    border-radius: 0 0 5px 5px;
+    margin-bottom: 15px;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  .faq-question.active + .faq-answer {
+    display: block;
+  }
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+</style>
+
+<div class="faq-block">
+  <h3>❓ Часто задаваемые вопросы</h3>
+
+  <button class="faq-question" onclick="this.classList.toggle('active')">Нужны ли вложения?</button>
+  <div class="faq-answer">Нет. Можно играть и зарабатывать без вложений — просто проходя мини-игры.</div>
+
+  <button class="faq-question" onclick="this.classList.toggle('active')">Что я реально получаю?</button>
+  <div class="faq-answer">Вы зарабатываете настоящую криптовалюту (BTC, DOGE, ETH и др.), которую можно вывести.</div>
+
+  <button class="faq-question" onclick="this.classList.toggle('active')">А если я новичок?</button>
+  <div class="faq-answer">Просто начните играть — всё интуитивно. А видео выше покажет, как зарегистрироваться.</div>
+
+  <button class="faq-question" onclick="this.classList.toggle('active')">Сколько можно заработать?</button>
+  <div class="faq-answer">Всё зависит от активности. Некоторые игроки зарабатывают стабильно каждый день.</div>
+</div>
+
+    <!-- Нижний горизонтальный баннер -->
+    <div class="bottom-banner">
+      <a href="https://rollercoin.com/?r=m6icrrst" target="_blank">
+        <img src="https://static.rollercoin.com/static/img/ref/gen2/w970h90.gif" alt="RollerCoin Bottom Banner" />
+      </a>
+    </div>
+
+  </div>
+    <!-- 🇬🇧 ENGLISH -->
+  <div class="content lang en">
+    <p>🐹💰 Welcome to the world where even a HAMSTER mines!</p>
+    <p>You’re browsing the web looking for income? All around — scams, gray schemes, and miracle crypto promises.</p>
+    <p>But here's the question: want to play arcade games for 5 minutes… and in a few days, see real crypto stacking up?</p>
+
+    <h3>🎮 Not a “withdrawal game”. It’s a GAME with a capital G</h3>
+    <ul>
+      <li>👉 No dumb donations</li>
+      <li>👉 No “enter wallet and wait for a miracle”</li>
+      <li>👉 No fluffy promises you'll be rich tomorrow</li>
+    </ul>
+
+    <p>You just play fun mini-games.<br/>
+    Win — gain “power” like building your own real mining farm.<br/>
+    And that farm starts mining real crypto for you. 💸</p>
+
+    <h3>🚀 What do you get?</h3>
+    <ul>
+      <li>🧱 Build your digital mining room</li>
+      <li>🤖 Compete with other players</li>
+      <li>⚙️ Upgrade your gear</li>
+      <li>🏆 Catch events, bonuses, and earn REAL CRYPTO</li>
+      <li>🎯 All in your browser, even from a phone</li>
+    </ul>
+
+    <h3>📌 Now the truth:</h3>
+    <p>You won’t be a millionaire in a week.<br/>
+    But you WILL get into the game.<br/>
+    And by the end of the month — you'll see crypto stacking, just because... you played.</p>
+
+    <h3>🎯 How to start?</h3>
+    <ol>
+      <li>Click the button below</li>
+      <li>Create an account — takes 15 seconds (watch the registration video)</li>
+      <li>Play mini-games</li>
+      <li>Join events</li>
+      <li>Watch your crypto grow. Daily.</li>
+      <li>But remember! Nothing comes for free — you’ll need to make a bit of effort.</li>
+      <li>What kind of effort? Just PLAY — and it’ll happen!</li>
+    </ol>
+
+    <!-- Registration button (blue) -->
+    <div style="text-align: center; margin: 30px 0;">
+      <a href="https://rollercoin.com/?r=m6icrrst" class="cta-button" style="background-color: #00c3ff; color: #ffffff;">
+        ✅ Register Now
+      </a>
+    </div>
+
+    <!-- Video -->
+    <div class="video">
+      <iframe width="100%" height="315"
+        src="https://www.youtube.com/embed/-U2iaIGAveo"
+        title="How to Register"
+        frameborder="0"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <!-- Glow block -->
+    <p class="glow-text">
+      You've already spent 5 minutes on this video.<br>
+      Spend 10 more — and see how to earn.<br><br>
+      Still hesitating?<br>
+      Just try. No investment, no risk.<br>
+      Just you and your chance.
+    </p>
+
+    <!-- CTA Button -->
+    <div style="text-align: center; margin-top: 20px;">
+      <a href="https://rollercoin.com/?r=m6icrrst" class="cta-button">
+        <span class="fire-emoji">🔥</span>START NOW
+      </a>
+    </div>
+    <div class="faq-block">
+  <h3>❓ Frequently Asked Questions</h3>
+
+  <button class="faq-question" onclick="this.classList.toggle('active')">Do I need to invest money?</button>
+  <div class="faq-answer">No. You can earn just by playing mini-games — no deposits needed.</div>
+
+  <button class="faq-question" onclick="this.classList.toggle('active')">What do I actually earn?</button>
+  <div class="faq-answer">You earn real cryptocurrency: BTC, DOGE, ETH and more — withdrawable.</div>
+
+  <button class="faq-question" onclick="this.classList.toggle('active')">What if I’m a total beginner?</button>
+  <div class="faq-answer">Just start playing — it's simple. And the video above shows how to register.</div>
+
+  <button class="faq-question" onclick="this.classList.toggle('active')">How much can I earn?</button>
+  <div class="faq-answer">It depends on your activity. Some users earn crypto daily just by playing.</div>
+</div>
+
+    <!-- Bottom banner -->
+    <div class="bottom-banner">
+      <a href="https://rollercoin.com/?r=m6icrrst" target="_blank">
+        <img src="https://static.rollercoin.com/static/img/ref/gen2/w970h90.gif" alt="RollerCoin Bottom Banner" />
+      </a>
+    </div>
+  </div>
+     <!-- 🇫🇷 FRENCH -->
+  <div class="content lang fr">
+    <p>🐹💰 Bienvenue dans un monde où même un HAMSTER mine de la crypto !</p>
+    <p>Tu es sur Internet à chercher comment gagner de l'argent ? Tout autour, ce sont des arnaques et des promesses miracles.</p>
+    <p>Mais dis-moi : tu veux jouer 5 minutes à un petit jeu… et voir ta crypto grimper quelques jours plus tard ?</p>
+
+    <h3>🎮 Pas un “jeu à retrait”. C’est un vrai JEU, en majuscules</h3>
+    <ul>
+      <li>👉 Pas de dons stupides</li>
+      <li>👉 Pas de “saisis ton wallet et attends un miracle”</li>
+      <li>👉 Pas de promesses en peluche de devenir riche demain</li>
+    </ul>
+
+    <p>Tu joues simplement à des mini-jeux fun.<br/>
+    Tu gagnes — tu obtiens de la “puissance” comme si tu construisais ta propre ferme de minage.<br/>
+    Et cette ferme commence à miner de la vraie crypto pour toi. 💸</p>
+
+    <h3>🚀 Qu’est-ce que tu gagnes ?</h3>
+    <ul>
+      <li>🧱 Tu construis ta chambre de minage numérique</li>
+      <li>🤖 Tu affrontes d'autres joueurs</li>
+      <li>⚙️ Tu améliores ton équipement</li>
+      <li>🏆 Tu attrapes des événements, des bonus et tu gagnes de la VRAIE CRYPTO</li>
+      <li>🎯 Tout ça — dans ton navigateur, même sur mobile</li>
+    </ul>
+
+    <h3>📌 Et maintenant, soyons réalistes :</h3>
+    <p>Tu ne deviendras pas millionnaire en une semaine.<br/>
+    Mais tu vas clairement accrocher au gameplay !<br/>
+    Et d’ici la fin du mois, tu verras la crypto s’accumuler — juste parce que… tu as joué.</p>
+
+    <h3>🎯 Comment commencer ?</h3>
+    <ol>
+      <li>Clique sur le bouton ci-dessous</li>
+      <li>Crée un compte — 15 secondes (regarde la vidéo)</li>
+      <li>Joue aux mini-jeux</li>
+      <li>Participe aux événements</li>
+      <li>Regarde ta crypto grimper. Tous les jours.</li>
+      <li>Mais souviens-toi : rien n'est gratuit — il faut juste un peu d'effort</li>
+      <li>Quel effort ? Juste JOUER — et ça marche !</li>
+    </ol>
+
+    <!-- Bouton bleu -->
+    <div style="text-align: center; margin: 30px 0;">
+      <a href="https://rollercoin.com/?r=m6icrrst" class="cta-button" style="background-color: #00c3ff; color: #ffffff;">
+        ✅ S'inscrire au jeu
+      </a>
+    </div>
+
+    <!-- Vidéo -->
+    <div class="video">
+      <iframe width="100%" height="315"
+        src="https://www.youtube.com/embed/-U2iaIGAveo"
+        title="Comment s'inscrire"
+        frameborder="0"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <!-- Texte lumineux -->
+    <p class="glow-text">
+      Tu as déjà passé 5 minutes sur cette vidéo.<br>
+      Passe encore 10 — et découvre comment gagner.<br><br>
+      Tu doutes encore ?<br>
+      Essaie. Sans investissement, sans risque.<br>
+      Juste toi — et ta chance.
+    </p>
+
+    <!-- Bouton final -->
+    <div style="text-align: center; margin-top: 20px;">
+      <a href="https://rollercoin.com/?r=m6icrrst" class="cta-button">
+        <span class="fire-emoji">🔥</span>COMMENCER
+      </a>
+    </div>
+     <div class="faq-block">
+  <h3>❓ Questions Fréquemment Posées</h3>
+
+  <button class="faq-question" onclick="this.classList.toggle('active')">Faut-il investir de l'argent ?</button>
+  <div class="faq-answer">Non. Vous pouvez gagner des crypto en jouant à des mini-jeux — sans dépôt.</div>
+
+  <button class="faq-question" onclick="this.classList.toggle('active')">Qu'est-ce que je gagne vraiment ?</button>
+  <div class="faq-answer">Vous gagnez de vraies cryptomonnaies : BTC, DOGE, ETH, etc. — retirable.</div>
+
+  <button class="faq-question" onclick="this.classList.toggle('active')">Et si je suis débutant ?</button>
+  <div class="faq-answer">Commencez simplement à jouer — c'est très simple. La vidéo explique comment s’inscrire.</div>
+
+  <button class="faq-question" onclick="this.classList.toggle('active')">Combien puis-je gagner ?</button>
+  <div class="faq-answer">Cela dépend de votre activité. Certains joueurs gagnent tous les jours.</div>
+</div>
+
+    <!-- Bannière en bas -->
+    <div class="bottom-banner">
+      <a href="https://rollercoin.com/?r=m6icrrst" target="_blank">
+        <img src="https://static.rollercoin.com/static/img/ref/gen2/w970h90.gif" alt="RollerCoin Bas Banner" />
+      </a>
+    </div>
+  </div>
+      <!-- 🇪🇸 SPANISH -->
+  <div class="content lang es">
+    <p>🐹💰 Bienvenido al mundo donde incluso un HÁMSTER mina criptomonedas.</p>
+    <p>Estás navegando buscando formas de ganar dinero. Y lo único que ves son estafas, esquemas raros y promesas mágicas.</p>
+    <p>¿Pero qué tal si juegas 5 minutos a un minijuego… y en unos días ves cómo tu cripto empieza a crecer?</p>
+
+    <h3>🎮 No es un “juego con retiro”. Es un JUEGO de verdad</h3>
+    <ul>
+      <li>👉 Sin donaciones tontas</li>
+      <li>👉 Sin “ingresa tu wallet y espera un milagro”</li>
+      <li>👉 Sin promesas dulces de hacerte rico mañana</li>
+    </ul>
+
+    <p>Solo juegas minijuegos divertidos.<br/>
+    Ganas — y obtienes “poder” como si crearas tu propia granja de minería real.<br/>
+    Esa granja comienza a minar cripto real para ti. 💸</p>
+
+    <h3>🚀 ¿Qué obtienes?</h3>
+    <ul>
+      <li>🧱 Construyes tu sala de minería digital</li>
+      <li>🤖 Compites con otros jugadores</li>
+      <li>⚙️ Mejoras tu equipo</li>
+      <li>🏆 Participas en eventos y consigues CRIPTOMONEDA REAL</li>
+      <li>🎯 Todo desde tu navegador, incluso desde el móvil</li>
+    </ul>
+
+    <h3>📌 La verdad:</h3>
+    <p>No te harás millonario en una semana.<br/>
+    Pero seguro te vas a enganchar con el juego.<br/>
+    Y a fin de mes verás criptomonedas en tu balance — ¡solo por jugar!</p>
+
+    <h3>🎯 ¿Cómo empezar?</h3>
+    <ol>
+      <li>Haz clic en el botón de abajo</li>
+      <li>Crea una cuenta — 15 segundos (mira el video)</li>
+      <li>Juega minijuegos</li>
+      <li>Participa en eventos</li>
+      <li>Ve cómo tu cripto crece. Cada día.</li>
+      <li>Pero recuerda: nada es gratis. Hay que esforzarse un poco.</li>
+      <li>¿Qué esfuerzo? ¡Solo jugar — y lo lograrás!</li>
+    </ol>
+
+    <!-- Botón azul -->
+    <div style="text-align: center; margin: 30px 0;">
+      <a href="https://rollercoin.com/?r=m6icrrst" class="cta-button" style="background-color: #00c3ff; color: #ffffff;">
+        ✅ Registrarse en el juego
+      </a>
+    </div>
+
+    <!-- Video -->
+    <div class="video">
+      <iframe width="100%" height="315"
+        src="https://www.youtube.com/embed/-U2iaIGAveo"
+        title="Cómo registrarse"
+        frameborder="0"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <!-- Texto brillante -->
+    <p class="glow-text">
+      Ya pasaste 5 minutos viendo esto.<br>
+      Dedica 10 más — y entiende cómo ganar de verdad.<br><br>
+      ¿Todavía lo dudas?<br>
+      Solo inténtalo. Sin inversión, sin riesgo.<br>
+      Tú y la oportunidad.
+    </p>
+
+    <!-- Botón final -->
+    <div style="text-align: center; margin-top: 20px;">
+      <a href="https://rollercoin.com/?r=m6icrrst" class="cta-button">
+        <span class="fire-emoji">🔥</span>EMPEZAR
+      </a>
+    </div>
+    <div class="faq-block">
+  <h3>❓ Preguntas Frecuentes</h3>
+
+  <button class="faq-question" onclick="this.classList.toggle('active')">¿Necesito invertir dinero?</button>
+  <div class="faq-answer">No. Puedes ganar simplemente jugando minijuegos — sin depósitos.</div>
+
+  <button class="faq-question" onclick="this.classList.toggle('active')">¿Qué gano realmente?</button>
+  <div class="faq-answer">Ganas criptomonedas reales: BTC, DOGE, ETH y más — y puedes retirarlas.</div>
+
+  <button class="faq-question" onclick="this.classList.toggle('active')">¿Y si soy principiante?</button>
+  <div class="faq-answer">Solo empieza a jugar — es muy fácil. Y el video muestra cómo registrarte.</div>
+
+  <button class="faq-question" onclick="this.classList.toggle('active')">¿Cuánto se puede ganar?</button>
+  <div class="faq-answer">Depende de tu actividad. Muchos jugadores ganan todos los días.</div>
+</div>
+
+    <!-- Banner inferior -->
+    <div class="bottom-banner">
+      <a href="https://rollercoin.com/?r=m6icrrst" target="_blank">
+        <img src="https://static.rollercoin.com/static/img/ref/gen2/w970h90.gif" alt="RollerCoin Banner Inferior" />
+      </a>
+    </div>
+  </div>
+<div class="world-testimonials">
+  <h3>🌍 Отзывы игроков со всего мира</h3>
+
+  <div class="testimonial">
+    <span>🇷🇺</span> <strong>Ирина, 26:</strong>  
+    «Начала играть “для прикола”. Теперь коплю на первый вывод. Всё честно, но реально подсаживаешься!»
+  </div>
+
+  <div class="testimonial">
+    <span>🇬🇧</span> <strong>Tom, UK:</strong>  
+    “Didn’t expect anything. But 3 days in, I was checking my stats like it’s my bank account.”
+  </div>
+
+  <div class="testimonial">
+    <span>🇫🇷</span> <strong>Chloé:</strong>  
+    «C’est addictif… je joue plus que je ne scroll TikTok 😅»
+  </div>
+
+  <div class="testimonial">
+    <span>🇪🇸</span> <strong>Sergio:</strong>  
+    “Pensé que era un juego más, pero ya gané mis primeras criptos. ¡Desde el móvil!”
+  </div>
+
+  <div class="testimonial">
+    <span>🇬🇧</span> <strong>Jade:</strong>  
+    “Honestly? Not a millionaire… but definitely entertained. And richer by 0.00002 BTC 😄”
+  </div>
+
+  <div class="testimonial">
+    <span>🇷🇺</span> <strong>Кирилл, 32:</strong>  
+    «Думал — очередная фигня. Сейчас захожу каждый день. Первый раз, когда браузерная игра реально платит.»
+  </div>
+</div>
+
+</body>
+</html>
