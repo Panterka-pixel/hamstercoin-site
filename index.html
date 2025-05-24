@@ -1,28 +1,141 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RollerCoin | Где майнит даже хомяк</title>
-  <link rel="icon" href="favicon.ico" />
+  <title>RollerCoin — Игра, где майнит даже ХОМЯК</title>
   <style>
     body {
       margin: 0;
-      background-color: #000;
+      padding: 0;
+      background-image: url('77848.jpg');
+      background-size: cover;
+      background-attachment: fixed;
       font-family: Arial, sans-serif;
-      color: #fff;
+      color: #ffd700;
+      text-shadow: 1px 1px 2px #000;
+    }
+    .language-switch {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      z-index: 999;
+    }
+    .language-select {
+      padding: 6px;
+      border-radius: 4px;
+      font-weight: bold;
+      background-color: #ffd700;
+      border: none;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .header-image {
       text-align: center;
+      margin: 20px auto 10px;
     }
-    .header {
-      width: 100%;
+    .header-image img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      filter: drop-shadow(0 0 15px #ffaa00);
+      animation: glowImage 3s infinite alternate;
     }
-    .banner {
-      margin-top: 30px;
+    @keyframes glowImage {
+      0%   { filter: drop-shadow(0 0 10px #ffaa00); }
+      50%  { filter: drop-shadow(0 0 30px #ff6600); }
+      100% { filter: drop-shadow(0 0 10px #ffaa00); }
+    }
+    .content {
+      background-color: rgba(0, 0, 0, 0.65);
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px auto;
+      max-width: 1000px;
+    }
+    .lang { display: none; }
+    .active-lang { display: block; }
+    .glow-text {
+      font-size: 18px;
+      line-height: 1.6;
+      text-align: center;
+      animation: glowText 2.5s infinite;
+    }
+    @keyframes glowText {
+      0%   { text-shadow: 0 0 5px #ffeb3b; color: #fff; }
+      50%  { text-shadow: 0 0 20px #ffd700, 0 0 30px #ffcc00; color: #ffffaa; }
+      100% { text-shadow: 0 0 5px #ffeb3b; color: #fff; }
+    }
+    .fire-emoji {
+      display: inline-block;
+      color: #ff0000;
+      animation: pulseFire 1.2s infinite;
+      margin-right: 8px;
+    }
+    @keyframes pulseFire {
+      0% { transform: scale(1); text-shadow: 0 0 5px #ff0000; }
+      50% { transform: scale(1.15); text-shadow: 0 0 15px #ff0000; }
+      100% { transform: scale(1); text-shadow: 0 0 5px #ff0000; }
+    }
+    .cta-button {
+      display: inline-block;
+      padding: 14px 28px;
+      background-color: #f1c40f;
+      color: #000000;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+    }
+    .cta-button:hover {
+      background-color: #ffd700;
+      cursor: pointer;
+    }
+    .video {
+      text-align: center;
+      margin: 40px 0;
+    }
+    .side-banner {
+      position: fixed;
+      left: 0;
+      top: 120px;
+      z-index: 10;
+    }
+    .bottom-banner {
+      text-align: center;
+      margin: 40px 0;
     }
   </style>
+  <script>
+    function switchLanguage(lang) {
+      document.querySelectorAll('.lang').forEach(el => el.classList.remove('active-lang'));
+      document.querySelector('.lang.' + lang).classList.add('active-lang');
+    }
+    window.onload = () => switchLanguage('ru');
+  </script>
 </head>
 <body>
+
+  <!-- Переключатель языков -->
+  <div class="language-switch">
+    <select class="language-select" onchange="switchLanguage(this.value)">
+      <option value="ru">🌐 Русский</option>
+      <option value="en">🇬🇧 English</option>
+      <option value="fr">🇫🇷 Français</option>
+      <option value="es">🇪🇸 Español</option>
+    </select>
+  </div>
+
+  <!-- Левый вертикальный баннер -->
+  <div class="side-banner">
+    <a href="https://rollercoin.com/?r=m6icrrst" target="_blank">
+      <img src="https://static.rollercoin.com/static/img/ref/gen2/w120h600.gif" alt="RollerCoin Left Banner" />
+    </a>
+  </div>
+
+  <!-- Шапка с хомяком -->
+  <div class="header-image">
   <img class="header" src="header.png" alt="RollerCoin Header" />
 
   <h1>Добро пожаловать в мир RollerCoin</h1>
