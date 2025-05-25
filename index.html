@@ -20,6 +20,21 @@
 
   <meta charset="UTF-8" />
   <title>RollerCoin — Игра, где майнит даже ХОМЯК</title>
+  <script>
+  const lang = navigator.language || navigator.userLanguage;
+  let title = "RollerCoin — earn free crypto by playing browser games"; // default: English
+
+  if (lang.startsWith("ru")) {
+    title = "RollerCoin — игра, где можно заработать криптовалюту бесплатно";
+  } else if (lang.startsWith("fr")) {
+    title = "RollerCoin — gagnez des cryptos gratuites en jouant en ligne";
+  } else if (lang.startsWith("es")) {
+    title = "RollerCoin — gana criptomonedas gratis jugando desde tu navegador";
+  }
+
+  document.title = title;
+</script>
+
   <style>
     body {
       margin: 0;
