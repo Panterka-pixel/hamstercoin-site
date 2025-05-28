@@ -1,0 +1,4 @@
+﻿User-agent: *
+Allow: /
+
+Sitemap: https://panterka-pixel.github.io/hamstercoin-site/sitemap.xml
